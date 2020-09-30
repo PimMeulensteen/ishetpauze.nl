@@ -9,4 +9,5 @@ function isPauze () {
   }
 }
 const elem = document.getElementById('result')
+isPauze()
 setInterval(isPauze, 1000)
