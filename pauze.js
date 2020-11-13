@@ -3,7 +3,11 @@ function isPauze () {
   const t = d.getMinutes()
 
   if (t < 45) {
-    elem.innerText = `Nee, nog ${45 - t} minuten`
+    if (t == 1){
+    elem.innerText = `Nee, nog ${45 - t} minuut`
+    } else{
+      elem.innerText = `Nee, nog ${45 - t} minuten`
+    }
   } else {
     elem.innerText = 'Ja, het is pauze!'
   }
