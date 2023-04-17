@@ -2,8 +2,12 @@ function isPauze() {
     const d = new Date()
     var ts = Math.round((new Date()).getTime() / 1000);
     const t = d.getMinutes()
+    const day = d.getDay()
 
-    if (t < 45) {
+    if (day >= 6) {
+        elem.innerText = "Ja, het is weekend!"
+        confetti.start()
+    } else if (t < 45) {
         if (t == 44) {
             elem.innerText = `Nee, nog 1 minuut`
         } else {
