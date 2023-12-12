@@ -1,8 +1,9 @@
 function isPauze() {
     const d = new Date()
-    var ts = Math.round((new Date()).getTime() / 1000);
     const t = d.getMinutes()
     const day = d.getDay()
+    const month = d.getMonth();
+    const date = d.getDate();
 
     if (day >= 6) {
         elem.innerText = "Ja, het is weekend!"
@@ -20,19 +21,19 @@ function isPauze() {
     }
 
     // kerstvakantie
-    if (ts >= 164038680 && ts <= 1610233199) {
+    if ((month == 11 && date > 22) || (month == 0 && date <= 7)) {
         elem.innerText = 'Ja, het is kerstvakantie!'
         confetti.start();
     }
 
     // meivakantie
-    if (ts >= 1651269601 && ts <= 1652047199) {
+    if ((month == 3 && date > 27) || (month == 4 && date <= 5)) {
         elem.innerText = 'Ja, het is meivakantie!'
         confetti.start();
     }
 
-    //zomervakantie 4 juli - 4 sep
-    if (ts >= 1656885601 && ts <= 1662328799) {
+    //zomervakantie
+    if (((month >= 6 && date > 28) || (month > 6 && month <= 9 ))) {
         elem.innerText = 'Ja, het is zomervakantie!'
         confetti.start();
     }
