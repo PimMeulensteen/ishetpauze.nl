@@ -33,7 +33,7 @@ function isPauze() {
     }
 
     //zomervakantie
-    if (((month >= 6 && date > 28) || (month > 6 && month <= 9 ))) {
+    if (((month == 6 && date > 28) || (month > 6 && month <= 9 ))) {
         elem.innerText = 'Ja, het is zomervakantie!'
         confetti.start();
     }
